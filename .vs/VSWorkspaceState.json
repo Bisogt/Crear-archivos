@@ -1,6 +1,37 @@
+
+}using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Crear_Archivos
 {
-  "ExpandedNodes": [
-    ""
-  ],
-  "PreviewInSolutionExplorer": false
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string archivo = "Progra.txt";
+            string archivo2 = "ArchivosBACO";
+            String ruta = Console.ReadLine() + ".txt";
+            StreamWriter ar;
+
+            ar = File.CreateText(archivo);
+
+            ar.WriteLine("Hola");
+            ar.WriteLine("4to Baco");
+            ar.Write(".............");
+            ar.Write("**************");
+            ar.Close();
+
+            StreamReader arl;
+            arl = File.OpenText(archivo);
+            string linea;
+            linea = arl.ReadToEnd();
+            arl.Close();
+            Console.WriteLine(linea);
+            Console.ReadKey();
+        }
+    }
 }
+    
